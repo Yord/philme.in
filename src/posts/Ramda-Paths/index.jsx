@@ -68,7 +68,7 @@ export const RamdaPaths = () => (
     <p>
       So in contrast to <code>path</code> that gets only a single attribute list,
       the <code>paths</code> function receives a list of attribute lists,
-      selects all of them from an object and returns a list of results:
+      selects all of them from an object and returns a list of results.
     </p>
     <h2>Implementing <code>paths</code> using <code>map</code></h2>
     <p>
