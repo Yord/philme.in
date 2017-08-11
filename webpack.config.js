@@ -1,4 +1,5 @@
 const path = require('path')
+const { DefinePlugin, optimize: { UglifyJsPlugin } } = require('webpack')
 
 const config = {
   devtool: 'eval',
@@ -44,7 +45,19 @@ const config = {
         loader: 'file-loader'
       }
     ]
-  }
+  },
+  plugins: (
+    process.env.NODE_ENV === 'production'
+    ? [
+      new DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production')
+        }
+      }),
+      new UglifyJsPlugin()
+    ]
+    : []
+  )
 }
 
 module.exports = config
