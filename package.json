@@ -1,6 +1,6 @@
 {
   "name": "philme-in",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.html",
   "author": "Philipp Wille",
   "license": "SEE LICENSE IN LICENSE.txt",
@@ -9,7 +9,7 @@
     "dist": "webpack --progress --colors --config webpack.config.js",
     "dev": "webpack-dev-server --progress --colors --config webpack.config.js --port 9411",
     "test": "jest --coverage --watch",
-    "code-quality": "plato --noempty --recurse --dir report --exclude .*\\.test\\..* --eslint ./node_modules/standard/eslintrc.json src"
+    "code-quality": "plato --noempty --recurse --dir report --exclude ^.*\\.\\(raw\\|test\\)\\..*$ --eslint ./node_modules/standard/eslintrc.json src"
   },
   "babel": {
     "presets": [

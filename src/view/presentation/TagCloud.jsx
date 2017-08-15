@@ -1,41 +1,21 @@
-import { Link as RouterLink } from 'ratatosk-router/view/Link'
-import { ButtonGroup, ButtonToolbar, Glyphicon, Label } from 'react-bootstrap'
+import { ButtonToolbar } from 'react-bootstrap'
 import { map } from 'ramda'
 import React from 'react'
 import styled from 'styled-components'
-import { OrderButton } from 'view/container/OrderButton'
 import FlipMove from 'react-flip-move'
 
 export let TagCloud = ({
+  children: [tagFn, sortButtons],
   className,
-  tagsWithOccurrence,
-  Button = OrderButton,
-  Link = RouterLink
+  tagsWithOccurrence
 }) => (
   <footer className={className}>
     <div>
       <ButtonToolbar>
-        <ButtonGroup>
-          <Button bsStyle='link' onClickOn context={{ action: 'order-tags-desc-by-occurrence' }}>
-            <Glyphicon glyph='sort-by-order-alt' />
-          </Button>
-          <Button bsStyle='link' onClickOn context={{ action: 'order-tags-alphabetically' }}>
-            <Glyphicon glyph='sort-by-alphabet' />
-          </Button>
-        </ButtonGroup>
+        {sortButtons}
       </ButtonToolbar>
       <FlipMove typeName='ol'>
-        {
-          map(
-            ([tag, occurrence]) => (
-              <li key={tag}>
-                <Link to={`/on/${tag}`}>{tag}</Link>
-                <Label bsStyle='danger'>{occurrence}</Label>
-              </li>
-            ),
-            tagsWithOccurrence
-          )
-        }
+        {map(tagFn, tagsWithOccurrence)}
       </FlipMove>
     </div>
   </footer>

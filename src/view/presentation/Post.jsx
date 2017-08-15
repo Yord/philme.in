@@ -1,11 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export let Post = ({ children, className }) => (
-  <article className={className}>{children}</article>
+export let Post = ({ children: [tags, title, content], className }) => (
+  <article className={className}>
+    {tags}
+    {title}
+    {content}
+  </article>
 )
 
 Post = styled(Post)`
+  a span {
+    display: inline-block;
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }
   padding-bottom: 2rem;
   p a {
     color: #5cb85c !important;

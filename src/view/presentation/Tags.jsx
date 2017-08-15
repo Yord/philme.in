@@ -1,4 +1,4 @@
-import { map } from 'ramda'
+import { map, replace } from 'ramda'
 import { isNotEmpty } from 'ratatosk-ramda'
 import { history } from 'ratatosk-router/config/history'
 import React from 'react'
@@ -12,7 +12,7 @@ let Tag = ({ className, tag }) => (
       history.push(`/on/${tag}`)
     }
   }>
-    {tag}
+    {replace('+', ' ', tag)}
   </Button>
 )
 
