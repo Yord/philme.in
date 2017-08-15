@@ -1,6 +1,8 @@
 import React from 'react'
-import { Posts } from 'view/container/Posts'
+import { BlogPost as BlogPostPresentation } from 'view/container/BlogPost'
 
-export const BlogPost = ({ tagOrTitle }) => (
-  <Posts tagOrTitle={tagOrTitle} />
+export const BlogPost = ({
+  tagOrTitle
+}) => (
+  <BlogPostPresentation tagOrTitle={tagOrTitle} />
 )

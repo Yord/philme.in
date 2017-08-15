@@ -1,4 +1,4 @@
-import { contains, isEmpty, filter, pipe, propSatisfies, values, view } from 'ramda'
+import { assoc, chain, contains, ifElse, isEmpty, equals, filter, length, map, pipe, prop, propSatisfies, values, view } from 'ramda'
 import { isNotEmpty, isNotNil } from 'ratatosk-ramda'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -12,7 +12,8 @@ const NoSuchTagOrTitle = () => (
 
 const noPosts = [
   {
-    content: <NoSuchTagOrTitle />,
+    article: <NoSuchTagOrTitle />,
+    id: 'No+Such+Tag+or+Title',
     tags: []
   }
 ]
@@ -29,26 +30,36 @@ const getAllPostsWithTag = tag => pipe(
   filter(propSatisfies(contains(tag), 'tags'))
 )
 
+const articleAsKey = key => chain(assoc('article'), prop(key))
+const articleAsContent = articleAsKey('content')
+const articleAsSummary = articleAsKey('summary')
+
 export const Posts = connect(
   (state, { tagOrTitle }) => {
     const allPosts = getAllPosts(state)
     if (isEmpty(tagOrTitle)) {
       return {
-        posts: allPosts
+        posts: map(articleAsSummary, allPosts)
       }
     }
 
     const post = getPost(tagOrTitle)(state)
     if (isNotNil(post)) {
       return {
-        posts: [ post ]
+        posts: [ articleAsContent(post) ]
       }
     }
 
     const allPostsWithTag = getAllPostsWithTag(tagOrTitle)(state)
     if (isNotEmpty(allPostsWithTag)) {
       return {
-        posts: allPostsWithTag
+        posts: (
+          ifElse(
+            pipe(length, equals(1)),
+            map(articleAsContent),
+            map(articleAsSummary)
+          )(allPostsWithTag)
+        )
       }
     }
 

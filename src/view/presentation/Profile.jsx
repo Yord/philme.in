@@ -1,20 +1,23 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
 import styled from 'styled-components'
-import { Description } from 'view/presentation/Profile/Description'
-import { Heading } from 'view/presentation/Profile/Heading'
-import { Portrait } from 'view/presentation/Profile/Portrait'
 const { Body, Left } = Media
 
-export let Profile = ({ avatar, className, name, description }) => (
+export let Profile = ({
+  avatar,
+  children: [portrait, heading, description],
+  className,
+  name /*,
+  description */
+}) => (
   <header className={className}>
     <Media>
       <Left>
-        <Portrait avatar={avatar} />
+        {portrait}
       </Left>
       <Body>
-        <Heading name={name} />
-        <Description description={description} />
+        {heading}
+        {description}
       </Body>
     </Media>
   </header>

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 export let Title = ({
   children,
   className,
+  date,
   id,
   Link = RouterLink
 }) => (
