@@ -1,2 +1,1 @@
-import Portrait from './ProfilePortrait'
-export default Portrait
+export { default } from './ProfilePortrait'
