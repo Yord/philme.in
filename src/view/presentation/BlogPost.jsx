@@ -23,8 +23,8 @@ export const BlogPost = ({
     <Link to='/'>
       <Profile>
         <Portrait avatar={avatar} />
-        <Heading name={name} />
-        <Description description={description} />
+        <Heading>{name}</Heading>
+        <Description>{description}</Description>
       </Profile>
     </Link>
     <Posts tagOrTitle={tagOrTitle}>

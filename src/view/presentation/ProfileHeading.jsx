@@ -2,8 +2,8 @@ import React from 'react'
 import { Media } from 'react-bootstrap'
 import styled from 'styled-components'
 
-export let Heading = ({ className, name }) => (
-  <Media.Heading className={className}>{name}</Media.Heading>
+export let Heading = ({ children, className }) => (
+  <Media.Heading className={className}>{children}</Media.Heading>
 )
 
 Heading = styled(Heading)`
