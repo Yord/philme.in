@@ -1,8 +1,8 @@
 import { ButtonToolbar } from 'react-bootstrap'
 import { map } from 'ramda'
 import React from 'react'
-import styled from 'styled-components'
 import FlipMove from 'react-flip-move'
+import styled from 'styled-components'
 
 export let TagCloud = ({
   children: [tagFn, sortButtons],
@@ -66,3 +66,5 @@ TagCloud = styled(TagCloud)`
     }
   }
 `
+
+export default TagCloud

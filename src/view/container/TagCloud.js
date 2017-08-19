@@ -1,8 +1,8 @@
 import { ascend, chain, countBy, descend, equals, head, identity, ifElse, last, map, pipe, prepend, prop, replace, sort, sortWith, toPairs, values, view } from 'ramda'
 import { connect } from 'react-redux'
-import { TagCloud as TagCloudPresentation } from 'view/presentation/TagCloud'
 import { appPosts } from 'store/app/selectors'
 import { tagOrderOrder } from 'store/tag-order/selectors'
+import TagCloudPresentation from 'view/presentation/TagCloud'
 
 const prependTagName = chain(prepend, pipe(head, replace('+', ' ')))
 
@@ -39,3 +39,5 @@ export const TagCloud = connect(
     )(state)
   })
 )(TagCloudPresentation)
+
+export default TagCloud

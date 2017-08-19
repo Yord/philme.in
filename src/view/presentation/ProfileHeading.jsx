@@ -11,3 +11,5 @@ Heading = styled(Heading)`
   margin: 0;
   font-weight: normal;
 `
+
+export default Heading

@@ -57,3 +57,5 @@ Post = styled(Post)`
     display: block;
   }
 `
+
+export default Post

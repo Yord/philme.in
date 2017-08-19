@@ -6,3 +6,5 @@ export const Posts = ({ children: postFn, posts }) => (
     {map(postFn, posts)}
   </div>
 )
+
+export default Posts

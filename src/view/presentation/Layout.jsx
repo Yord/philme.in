@@ -30,3 +30,5 @@ Layout = styled(Layout)`
     }
   }
 `
+
+export default Layout

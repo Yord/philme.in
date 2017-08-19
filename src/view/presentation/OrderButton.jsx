@@ -7,3 +7,5 @@ export const OrderButton = ({
 }) => (
   <BootstrapButton bsStyle='link' onClick={onClick}>{children}</BootstrapButton>
 )
+
+export default OrderButton

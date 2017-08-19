@@ -5,7 +5,7 @@ import React from 'react'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import styled from 'styled-components'
 
-let Tag = ({ className, tag }) => (
+export let Tag = ({ className, tag }) => (
   <Button className={className} bsStyle='warning' bsSize='xsmall' onClick={
     event => {
       event.preventDefault()
@@ -39,3 +39,5 @@ Tags = styled(Tags)`
   margin: 3rem auto 0 auto;
   width: 700px;
 `
+
+export default Tags

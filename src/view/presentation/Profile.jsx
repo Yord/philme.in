@@ -7,8 +7,7 @@ export let Profile = ({
   avatar,
   children: [portrait, heading, description],
   className,
-  name /*,
-  description */
+  name
 }) => (
   <header className={className}>
     <Media>
@@ -30,3 +29,5 @@ Profile = styled(Profile)`
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 `
+
+export default Profile

@@ -1,17 +1,17 @@
 import { Link } from 'ratatosk-router/view/Link'
 import React from 'react'
 import { ButtonGroup, Glyphicon, Label } from 'react-bootstrap'
-import { OrderButton } from 'view/container/OrderButton'
-import { Posts } from 'view/container/Posts'
-import { TagCloud } from 'view/container/TagCloud'
-import { Layout } from 'view/presentation/Layout'
-import { Description } from 'view/presentation/ProfileDescription'
-import { Heading } from 'view/presentation/ProfileHeading'
-import { Post } from 'view/presentation/Post'
-import { Portrait } from 'view/presentation/ProfilePortrait'
-import { Profile } from 'view/presentation/Profile'
-import { Tags } from 'view/presentation/Tags'
-import { Title } from 'view/presentation/Title'
+import OrderButton from 'view/container/OrderButton'
+import Posts from 'view/container/Posts'
+import TagCloud from 'view/container/TagCloud'
+import Layout from 'view/presentation/Layout'
+import Description from 'view/presentation/ProfileDescription'
+import Heading from 'view/presentation/ProfileHeading'
+import Post from 'view/presentation/Post'
+import Portrait from 'view/presentation/ProfilePortrait'
+import Profile from 'view/presentation/Profile'
+import Tags from 'view/presentation/Tags'
+import Title from 'view/presentation/Title'
 
 export const BlogPost = ({
   avatar,
@@ -54,3 +54,5 @@ export const BlogPost = ({
     </TagCloud>
   </Layout>
 )
+
+export default BlogPost

@@ -9,3 +9,5 @@ Description = styled(Description)`
   margin: 0;
   color: rgba(0, 0, 0, 0.45);
 `
+
+export default Description
