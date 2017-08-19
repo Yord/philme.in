@@ -1,6 +1,13 @@
+import { PropTypes } from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+/**
+ * Layout for a Post.
+ *
+ * @version 1.0.0
+ * @author [Philipp Wille](https://github.com/Yord)
+*/
 export let Post = ({ children: [tags, title, content], className }) => (
   <article className={className}>
     {tags}
@@ -8,6 +15,18 @@ export let Post = ({ children: [tags, title, content], className }) => (
     {content}
   </article>
 )
+
+Post.propTypes = {
+  /**
+   * Components passed into an OrderButton. Must be specified in the following
+   * order: tags, title, content.
+   */
+  children: PropTypes.arrayOf(PropTypes.node)
+}
+
+Post.defaultProps = {
+  children: null
+}
 
 Post = styled(Post)`
   a span {

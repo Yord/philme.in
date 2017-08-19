@@ -1,9 +1,16 @@
+import { PropTypes } from 'prop-types'
 import { ButtonToolbar } from 'react-bootstrap'
 import { map } from 'ramda'
 import React from 'react'
 import FlipMove from 'react-flip-move'
 import styled from 'styled-components'
 
+/**
+ * Layout for a TagCloud.
+ *
+ * @version 1.0.0
+ * @author [Philipp Wille](https://github.com/Yord)
+*/
 export let TagCloud = ({
   children: [tagFn, sortButtons],
   className,
@@ -20,6 +27,29 @@ export let TagCloud = ({
     </div>
   </footer>
 )
+
+TagCloud.propTypes = {
+  /**
+   * Components and component constructor functions passed into a TagCloud.
+   * Must be specified in the following order: tagFn, sortButtons.
+   *
+   * tagFn is a function that takes a \[tag, occurrence\] pair and returns a
+   * component.
+   *
+   * sortButtons is an array of button-like components.
+   */
+  children: PropTypes.array,
+  /**
+   * An array of \[tag, occurrence\] pairs that are transformed by the tagFn in
+   * the children array to components and rendered inside the TagCloud component.
+   */
+  tagsWithOccurrence: PropTypes.array
+}
+
+TagCloud.defaultProps = {
+  children: [() => null, null],
+  tagsWithOccurrence: []
+}
 
 TagCloud = styled(TagCloud)`
   padding: 5rem 0;
