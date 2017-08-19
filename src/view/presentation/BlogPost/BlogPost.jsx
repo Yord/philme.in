@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types'
 import { Link } from 'ratatosk-router/view/Link'
 import React from 'react'
 import { ButtonGroup, Glyphicon, Label } from 'react-bootstrap'
-import OrderButton from 'view/container/OrderButton'
+import LinkButton from 'view/container/LinkButton'
 import Posts from 'view/container/Posts'
 import TagCloud from 'view/container/TagCloud'
 import Layout from 'view/presentation/Layout'
@@ -56,12 +56,12 @@ export const BlogPost = ({
         </li>
       )}
       <ButtonGroup>
-        <OrderButton onClickOn context={{ action: 'order-tags-desc-by-occurrence' }}>
+        <LinkButton onClickOn context={{ action: 'order-tags-desc-by-occurrence' }}>
           <Glyphicon glyph='sort-by-order-alt' />
-        </OrderButton>
-        <OrderButton onClickOn context={{ action: 'order-tags-alphabetically' }}>
+        </LinkButton>
+        <LinkButton onClickOn context={{ action: 'order-tags-alphabetically' }}>
           <Glyphicon glyph='sort-by-alphabet' />
-        </OrderButton>
+        </LinkButton>
       </ButtonGroup>
     </TagCloud>
   </Layout>
