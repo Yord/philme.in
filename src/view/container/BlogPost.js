@@ -1,7 +1,7 @@
 import { view } from 'ramda'
 import { connect } from 'react-redux'
 import { profileAvatar, profileDescription, profileName } from 'store/profile/selectors'
-import { BlogPost as BlogPostPresentation } from 'view/presentation/BlogPost'
+import BlogPostPresentation from 'view/presentation/BlogPost'
 
 export const BlogPost = connect(
   state => ({
@@ -10,3 +10,5 @@ export const BlogPost = connect(
     name: view(profileName, state)
   })
 )(BlogPostPresentation)
+
+export default BlogPost

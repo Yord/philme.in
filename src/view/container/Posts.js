@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { appPosts } from 'store/app/selectors'
 import { postByTitle } from 'store/posts/selectors'
-import { Posts as PostsPresentation } from 'view/presentation/Posts'
+import PostsPresentation from 'view/presentation/Posts'
 
 const NoSuchTagOrTitle = () => (
   <p>No Blog Posts with these tags or titles found!</p>
@@ -68,3 +68,5 @@ export const Posts = connect(
     }
   }
 )(PostsPresentation)
+
+export default Posts

@@ -1,6 +1,13 @@
+import { PropTypes } from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+/**
+ * Blog layout.
+ *
+ * @version 1.0.0
+ * @author [Philipp Wille](https://github.com/Yord)
+*/
 export let Layout = ({
   children: [header, posts, footer],
   className
@@ -11,6 +18,18 @@ export let Layout = ({
     {footer}
   </main>
 )
+
+Layout.propTypes = {
+  /**
+   * Components passed into a Layout. Must be specified in the following order:
+   * header, posts, footer.
+   */
+  children: PropTypes.arrayOf(PropTypes.node)
+}
+
+Layout.defaultProps = {
+  children: [null, null, null]
+}
 
 Layout = styled(Layout)`
   a {
@@ -30,3 +49,5 @@ Layout = styled(Layout)`
     }
   }
 `
+
+export default Layout
