@@ -1,7 +1,7 @@
 import { OnClick } from 'ratatosk-event-handlers/events'
 import { handleEvents } from 'ratatosk-redux'
 import { connect } from 'react-redux'
-import { OrderButton as OrderButtonPresentation } from 'view/presentation/OrderButton'
+import OrderButtonPresentation from 'view/presentation/OrderButton'
 
 export const OrderButton = connect(
   () => ({}),
@@ -9,3 +9,5 @@ export const OrderButton = connect(
     onClick: OnClick('BUTTON')
   })
 )(OrderButtonPresentation)
+
+export default OrderButton
