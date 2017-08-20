@@ -37,7 +37,7 @@ Tags.defaultProps = {
 }
 
 Tags = styled(Tags)`
-  margin: 3rem auto 0 auto;
+  margin: 3rem auto 0 auto !important;
   width: 700px;
 `
 

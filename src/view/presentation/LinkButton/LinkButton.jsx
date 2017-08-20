@@ -3,28 +3,28 @@ import React from 'react'
 import { Button as BootstrapButton } from 'react-bootstrap'
 
 /**
- * Button for sorting tag cloud tags.
+ * Button dispatching an onClick redux action.
  *
  * @version 1.0.0
  * @author [Philipp Wille](https://github.com/Yord)
 */
-export const OrderButton = ({
+export const LinkButton = ({
   children,
   onClick
 }) => (
   <BootstrapButton bsStyle='link' onClick={onClick}>{children}</BootstrapButton>
 )
 
-OrderButton.propTypes = {
-  /** Components passed into an OrderButton. */
+LinkButton.propTypes = {
+  /** Components passed into a LinkButton. */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ])
 }
 
-OrderButton.defaultProps = {
+LinkButton.defaultProps = {
   children: null
 }
 
-export default OrderButton
+export default LinkButton
