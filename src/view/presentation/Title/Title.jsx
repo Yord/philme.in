@@ -26,9 +26,7 @@ Title.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
-  /**
-   * An id used in the Title link.
-   */
+  /** An id used in the Title link. */
   id: PropTypes.string,
   /** A component used as a link for the Title. */
   Link: PropTypes.func
